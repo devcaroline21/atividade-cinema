@@ -1,0 +1,42 @@
+*{  /*reset css*/
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #1d1d1d;
+}
+/*inicio topo - menu*/
+header{
+    background-color: #b90000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+nav > a{
+    text-decoration: none;
+    color:#353535;
+    font-size: 35px;
+    font-family: "Bebas Neue", sans-serif;
+}
+/*fim topo - menu*/
+h1{
+    font-size: 40px;
+    color:#353535;
+    font-family: "Bebas Neue", sans-serif;
+}
+main{
+    display: flex;
+    align-items: center;/*pesquisar*/
+    justify-content: center;
+    min-height: 100vh;/*pesquisar*/
+}
+.card, .img, img{
+    width: 140px;
+    height: initial;
+    object-fit: cover;/*pesquisar*/
+}
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
