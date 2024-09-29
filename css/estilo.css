@@ -3,11 +3,11 @@
     padding: 0;
 }
 body{
-    background-color: #1d1d1d;
+    background: linear-gradient(to left top, #141212, #5d1212);
 }
 /*inicio topo - menu*/
 header{
-    background-color: #b90000;
+    background: linear-gradient(to right top, #a31515,#1e1a1a);
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -21,7 +21,7 @@ nav > a{
 /*fim topo - menu*/
 h1{
     font-size: 40px;
-    color:#353535;
+    color: #c1c1c1;
     font-family: "Bebas Neue", sans-serif;
 }
 main{
@@ -29,14 +29,35 @@ main{
     align-items: center;/*pesquisar*/
     justify-content: center;
     min-height: 100vh;/*pesquisar*/
+    padding: 0 35px;
+}
+/*inicio carrosel de cards*/
+.card-body{
+    max-width: 1100px;
+    width: 100%;
+
+}
+.card-body .carrosel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow: hidden;
+}
+.card, .carrosel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .card, .img, img{
-    width: 140px;
+    width: 250px;
     height: initial;
     object-fit: cover;/*pesquisar*/
+    border-radius: 10px;
 }
 .card-body{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/*fim carrosel de cards*/
