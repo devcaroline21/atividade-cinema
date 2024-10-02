@@ -1,0 +1,22 @@
+/*giovanna*/
+    h1{
+        font-size: 40px;
+        color: #fdfdfd;
+        font-family: "Bebas Neue", sans-serif;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 75vh;
+        padding: 0 35px;
+        height: auto;
+        background-size: 75px;
+    }
+    body {
+        background: linear-gradient(to left top, #7f538a, #732a7c);
+    }
+        header{
+            background: linear-gradient(to right top, #5c2a69,#542264);   
+            
+        }
