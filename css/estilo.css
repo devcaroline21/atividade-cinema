@@ -35,7 +35,16 @@ main{
 .card-body{
     max-width: 1100px;
     width: 100%;
+    position: relative;
 
+}
+.card-body svg{
+    height: 50px;
+    width: 50px;
+    color: #fdfdfd;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-50%);
 }
 .card-body .carrosel{
     display: grid;
@@ -43,6 +52,11 @@ main{
     grid-auto-columns: calc((100% / 3) - 12px);
     gap: 16px;
     overflow: hidden;
+}
+.carrosel :where(.card, .img){
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .card, .carrosel{
     display: flex;
@@ -60,4 +74,37 @@ main{
     justify-content: center;
     align-items: center;
 }
+
+/*pesquisar {*/
+@media screen and (max-width: 900px){
+    .card-body .carrosel{
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+@media screen and (max-width: 600px){
+    .card-body .carrosel{
+        grid-auto-columns: 100%;
+    }
+}/*pesquisar }*/
+
 /*fim carrosel de cards*/
+
+/*giovanna*/
+h1{
+    font-size: 40px;
+    color: #fdfdfd;
+    font-family: "Bebas Neue", sans-serif;
+}
+.body-mlp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 35px;
+    height: auto;
+    background-size: 75px;
+    background: linear-gradient(to left top, #7f538a, #b46ebd);
+}
+.topo-mlp{
+    background: linear-gradient(to right top, #5c2a69,#542264);   
+}
