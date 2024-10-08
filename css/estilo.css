@@ -20,7 +20,7 @@ nav > a{
 }
 /*fim topo - menu*/
 h1{
-    font-size: 40px;
+    font-size: 45px;
     color: #c1c1c1;
     font-family: "Bebas Neue", sans-serif;
 }
@@ -63,7 +63,7 @@ main{
     justify-content: center;
     flex-direction: column;
 }
-.card, .img, img{
+.card, .img, a > img{
     width: 250px;
     height: initial;
     object-fit: cover;/*pesquisar*/
@@ -89,22 +89,49 @@ main{
 
 /*fim carrosel de cards*/
 
-/*giovanna*/
-h1{
-    font-size: 40px;
-    color: #fdfdfd;
-    font-family: "Bebas Neue", sans-serif;
+/*inicio giovanna*/
+.topo-mlp{
+    background: linear-gradient(to right top, #46236d,#8355ad);   
 }
-.body-mlp {
+.body-mlp{
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to left top, #7745a7, #43226e);
+}
+.img-mlp {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     padding: 0 35px;
     height: auto;
     background-size: 75px;
-    background: linear-gradient(to left top, #7f538a, #b46ebd);
 }
-.topo-mlp{
-    background: linear-gradient(to right top, #5c2a69,#542264);   
+h2{
+    display: flex;
+    color:#c1c1c1;
+    font-family: "Bebas Neue", sans-serif;
+    justify-content: center;
+    font-size: 35px;
 }
+
+
+
+/*fim giovanna*/
+/*inicio emily*/
+.topo-mario{
+    background: linear-gradient(to left top, #ce0707, #0000be);
+}
+.body-mario{
+    min-height: 100vh;
+    background: linear-gradient(to right top, #fc0000, #0000be);
+}
+.card-mario img, .img-mario{
+    display: flex;
+    justify-content: start;
+    width: 250px;
+    height: initial;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/*fim emily*/
