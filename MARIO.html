@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <!-- fim fonte -->
     <link rel="stylesheet" href="css/estilo.css">
     <title>cine mario bros</title>
@@ -22,8 +23,29 @@
     </header>
     <div class="body-mario">
         <div class="card-mario">
-            <img class="img-mario" src="img/marioposter.png" alt="mario">
+            <img class="img-postermario" src="img/marioposter.jpg" alt="mario">
+        <p class="text-mario">
+            O filme Super Mario Bros. (2023) é uma animação cheia de energia e nostalgia, baseada no icônico personagem dos videogames criado pela Nintendo. A história segue Mario e seu irmão Luigi, dois encanadores que acabam sendo transportados para o Reino dos Cogumelos, onde enfrentam o vilão Bowser para salvar a Princesa Peach e restaurar a paz. Com visuais vibrantes, cenas de ação empolgantes e referências aos jogos clássicos, o filme agrada tanto os fãs de longa data quanto os novos espectadores. A dublagem de Chris Pratt como Mario e Jack Black como Bowser também chamou a atenção, trazendo um toque de humor e carisma aos personagens. É uma aventura divertida e cheia de ação, perfeita para fãs de todas as idades.
+        </p>
         </div>
+        <div class="jogo" id="gamemario">
+            <img class="img-mario" src="img/player/mario.png" alt="mario-girando">
+            <img src="" alt="">
+        </div>
+        <script>
+            const gamemario = document.getElementById('gamemario');
+            const imgMario = gamemario.querySelector('img'); // Seleciona a imagem dentro de 'gamemario'
+
+            gamemario.addEventListener('mouseover', () => {
+                imgMario.classList.add('moving'); // Adiciona a classe que ativa o movimento
+            });
+
+            gamemario.addEventListener('mouseout', () => {
+                setTimeout(() => {
+                    imgMario.classList.remove('moving'); // Remove a classe 'moving' após 1 segundo
+                }, 1000);
+            });
+        </script>
     </div>
 </body>
 </html>
