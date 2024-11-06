@@ -1,45 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html> <!-- Declara o tipo de documento como HTML5 -->
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- inicio fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-    <!-- fim fonte -->
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>cine mario bros</title>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva em dispositivos móveis -->
+    
+    <!-- Fonte externa: Bebas Neue e Silkscreen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Pré-carrega o servidor do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Pré-carrega o servidor de fontes com segurança -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> <!-- Fonte Bebas Neue -->
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet"> <!-- Fonte Silkscreen -->
+    
+    <link rel="stylesheet" href="css/estilo.css"> <!-- Importa o arquivo de estilo CSS externo -->
+    <title>cine mario bros</title> <!-- Define o título da página que aparece na aba do navegador -->
 </head>
 <body>
-    <header class="topo-mario">
-        <h1>CINEMA</h1>
-        <nav>
-            <a href="index.html">VOLTAR</a>
-            <a href="#filme">FILME</a>
-            <a href="#contato">CONTATO</a> 
+    <!-- Início do cabeçalho -->
+    <header class="topo-mario"> 
+        <h1>CINEMA</h1> <!-- Título principal da página -->
+        <nav> <!-- Menu de navegação -->
+            <a href="index.html">VOLTAR</a> <!-- Link que leva de volta à página inicial -->
+            <a href="#filme">FILME</a> <!-- Link que leva à seção de filme (com id="filme") -->
+            <a href="#contato">CONTATO</a> <!-- Link para a seção de contato -->
         </nav>
     </header>
-    <div class="body-mario">
-        <div class="card-mario">
-            <img class="img-postermario" src="img/marioposter.jpg" alt="mario">
-        <p class="text-mario">
-            O filme Super Mario Bros. (2023) é uma animação cheia de energia e nostalgia, baseada no icônico personagem dos videogames criado pela Nintendo. A história segue Mario e seu irmão Luigi, dois encanadores que acabam sendo transportados para o Reino dos Cogumelos, onde enfrentam o vilão Bowser para salvar a Princesa Peach e restaurar a paz. Com visuais vibrantes, cenas de ação empolgantes e referências aos jogos clássicos, o filme agrada tanto os fãs de longa data quanto os novos espectadores. A dublagem de Chris Pratt como Mario e Jack Black como Bowser também chamou a atenção, trazendo um toque de humor e carisma aos personagens. É uma aventura divertida e cheia de ação, perfeita para fãs de todas as idades.
-        </p>
-        </div>
-        <div class="jogo" id="gamemario">
-            <img class="img-mario" src="img/player/mario.png" alt="mario-girando">
-            <img src="" alt="">
-        </div>
-        <script>
-            const gamemario = document.getElementById('gamemario');
-            const imgMario = gamemario.querySelector('img'); // Seleciona a imagem dentro de 'gamemario'
+    <!-- Fim do cabeçalho -->
 
+    <!-- Início do corpo da página -->
+    <div class="body-mario">
+        <div class="card-mario"> <!-- Card que contém a imagem e a descrição do filme -->
+            <img class="img-postermario" src="img/marioposter.jpg" alt="mario"> <!-- Imagem do pôster do filme -->
+            <p class="text-mario"> <!-- Parágrafo com descrição do filme -->
+                O filme Super Mario Bros. (2023) é uma animação cheia de energia e nostalgia, baseada no icônico personagem dos videogames criado pela Nintendo. A história segue Mario e seu irmão Luigi, dois encanadores que acabam sendo transportados para o Reino dos Cogumelos, onde enfrentam o vilão Bowser para salvar a Princesa Peach e restaurar a paz. Com visuais vibrantes, cenas de ação empolgantes e referências aos jogos clássicos, o filme agrada tanto os fãs de longa data quanto os novos espectadores. A dublagem de Chris Pratt como Mario e Jack Black como Bowser também chamou a atenção, trazendo um toque de humor e carisma aos personagens. É uma aventura divertida e cheia de ação, perfeita para fãs de todas as idades.
+            </p>
+        </div>
+        
+        <div class="jogo" id="gamemario"> <!-- Seção com id "gamemario" para interação com as imagens -->
+            <img class="img-mario" src="img/player/mario.png" alt="mario-girando"> <!-- Imagem do Mario que irá se mover -->
+            <img src="img/player/luigi.png" alt="luigi"> <!-- Imagem do Luigi -->
+        </div>
+
+        <script>
+            // Acessa o elemento com id 'gamemario' (contêiner de imagens)
+            const gamemario = document.getElementById('gamemario');
+            const imgMario = gamemario.querySelector('img'); // Seleciona a primeira imagem (do Mario)
+
+            // Usando appendChild: Adiciona um novo parágrafo com um texto à div 'body-mario'
+            const legendas = document.createElement('p'); 
+            legendas.textContent = 'Mario: Aventura em 3D chegou!'; // Texto do parágrafo
+            document.querySelector('.body-mario').appendChild(legendas); // Adiciona o parágrafo ao final do corpo
+            legendas.style.color = 'white'; // Altera a cor do texto para branco
+
+            // Usando setAttribute: Modifica o atributo 'src' da segunda imagem (do Luigi)
+            const imagem2 = gamemario.querySelectorAll('img')[1]; // Seleciona a segunda imagem
+            imagem2.setAttribute('src', 'img/player/cogumelo.png'); // Troca a imagem do Luigi para cogumelo
+            imagem2.style.width = '50px'; // Ajusta a largura da nova imagem
+
+            // Movimentação de Mario ao passar o mouse
             gamemario.addEventListener('mouseover', () => {
-                imgMario.classList.add('moving'); // Adiciona a classe que ativa o movimento
+                imgMario.classList.add('moving'); // Adiciona a classe 'moving' à imagem do Mario, iniciando a animação
             });
 
+            // Ao retirar o mouse, remove a animação após 1 segundo
             gamemario.addEventListener('mouseout', () => {
                 setTimeout(() => {
                     imgMario.classList.remove('moving'); // Remove a classe 'moving' após 1 segundo
@@ -47,5 +68,6 @@
             });
         </script>
     </div>
+    <!-- Fim do corpo da página -->
 </body>
 </html>

@@ -42,69 +42,115 @@ main {
 }
 
 /* Início do carrossel de cards */
+/* Estilização do container principal de cartões */
 .card-body {
     max-width: 1100px; /* Define uma largura máxima para o container */
     width: 100%; /* O container ocupa 100% da largura disponível */
     position: relative; /* Permite posicionar elementos dentro do container */
+    display: flex; /* Flexbox para organizar os itens */
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente no centro */
 }
 
+/* Estilização dos ícones SVG */
 .card-body svg {
-    height: 50px; /* Define a altura do ícone SVG */
-    width: 50px; /* Define a largura do ícone SVG */
-    color: #fdfdfd; /* Define a cor do ícone como branco */
-    cursor: pointer; /* Muda o cursor para "pointer" ao passar sobre o ícone */
-    position: relative; /* Permite ajustar o posicionamento do ícone */
-    transform: translateY(-50%); /* Ajusta a posição do ícone para que ele fique centrado verticalmente */
+    height: 50px;
+    width: 50px;
+    color: #fdfdfd; /* Cor branca */
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-50%); /* Centraliza o ícone verticalmente */
 }
 
+/* Estilização do carrossel */
 .card-body .carrosel {
     display: grid; /* Usa grid para organizar os cards */
     grid-auto-flow: column; /* Organiza os itens em colunas */
     grid-auto-columns: calc((100% / 3) - 12px); /* Calcula o tamanho das colunas */
     gap: 16px; /* Espaço entre os itens */
     overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o container */
-    width: 1100px; /* Define a largura do carrossel */
-    height: 600px; /* Define a altura do carrossel */
+    width: 1100px; /* Largura do carrossel */
+    height: 600px; /* Altura do carrossel */
 }
 
+/* Estilização dos elementos flexíveis dentro do carrossel */
 .carrosel :where(.card, .img) {
-    display: flex; /* Usa flexbox para alinhar os itens */
-    justify-content: center; /* Alinha os itens no centro horizontalmente */
-    flex-direction: column; /* Organiza os itens em coluna */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
+/* Estilização dos cards */
 .card, .carrosel {
-    display: flex; /* Flexbox para organizar os itens */
-    justify-content: center; /* Alinha os itens no centro */
-    flex-direction: column; /* Organiza os itens em coluna */
-    margin: 10px; /* Adiciona uma margem de 10px entre os cards */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px; /* Espaço entre os cards */
 }
 
+/* Estilização das imagens */
 .card, .img, a > img {
-    width: 250px; /* Largura das imagens dentro dos cards */
-    height: initial; /* Mantém a proporção original das imagens */
-    object-fit: cover; /* Faz a imagem cobrir o espaço da caixa sem deformar */
+    width: 250px; /* Largura das imagens */
+    height: initial; /* Mantém a proporção original */
+    object-fit: cover; /* As imagens cobrem o espaço da caixa sem deformar */
     border-radius: 10px; /* Arredonda os cantos das imagens */
 }
 
-.card-body {
-    display: flex; /* Flexbox para organizar os itens */
-    justify-content: center; /* Alinha os itens no centro */
-    align-items: center; /* Alinha verticalmente no centro */
+/* Estilização do container do carrossel de imagens */
+.carousel-container {
+    width: 100%;
+    max-width: 1100px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilização do container de imagens no carrossel */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+/* Estilização das imagens do carrossel */
+.carousel-image {
+    min-width: 100%; /* Cada slide ocupa 100% da largura do container */
+    height: 600px;
+}
+
+/* Estilização dos botões do carrossel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza o botão verticalmente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* Posição dos botões */
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
 }
 
 /* Responsividade - Ajustes para telas menores */
 @media screen and (max-width: 900px) {
     .card-body .carrosel {
-        grid-auto-columns: calc((100% / 2) - 9px); /* Ajusta para 2 colunas em telas menores */
+        grid-auto-columns: calc((100% / 2) - 9px); /* 2 colunas em telas menores */
     }
 }
 
 @media screen and (max-width: 600px) {
     .card-body .carrosel {
-        grid-auto-columns: 100%; /* Ajusta para 1 coluna em telas muito pequenas */
+        grid-auto-columns: 100%; /* 1 coluna em telas pequenas */
     }
 }
+
 /* Fim do carrossel de cards */
 
 /* Estilos específicos para a seção "Giovanna" */
@@ -116,27 +162,46 @@ main {
     display: flex; /* Flexbox para organizar os itens dentro do body */
     min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
     background: linear-gradient(to left top, #7745a7, #43226e); /* Gradiente de fundo */
+    flex-direction: column; /* Organiza os itens na coluna para mobile */
+    align-items: center; /* Alinha os itens ao centro */
 }
-
 .img-mlp {
-    display: flex; /* Flexbox para organizar os itens da imagem */
-    align-items: center; /* Alinha a imagem no centro verticalmente */
-    justify-content: center; /* Alinha a imagem no centro horizontalmente */
-    padding: 0 35px; /* Adiciona padding nas laterais */
-    height: auto; /* Garante que a altura da imagem seja proporcional */
-    background-size: 75px; /* Define o tamanho do fundo da imagem */
+    width: 250px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
 }
 
-h2 {
-    display: flex; /* Flexbox para alinhar o título */
-    color: #c1c1c1; /* Cor do texto do título */
-    font-family: "Bebas Neue", sans-serif; /* Fonte personalizada */
-    justify-content: center; /* Alinha o título no centro horizontalmente */
-    font-size: 35px; /* Define o tamanho da fonte */
+.text-mlp, h2{
+    color: #f5f5f5;
+    max-width: 900px; /* Limita a largura do texto */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas de texto */
+    text-align: justify; /* Justifica o texto (alinha o texto à esquerda e à direita) */
+}
+.card-mlp {
+    display: flex; /* Aplica o layout flexbox na card */
+    margin-top: 20px;
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: flex-start; /* Garante que a imagem e o texto fiquem juntos */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    padding: 30px;
+    border-radius: 50px; /* Bordas arredondadas para o container */
+    box-shadow: 0px 4px 20px #000000a4; /* Sombra suave para a card */
+}
+.img-postermlp {
+    width: 250px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+}
+.img-turma-mlp{
+    width: 200px;
 }
 /* Fim da seção "Giovanna" */
 
 /* Estilos específicos para a seção "Emily" */
+.topo-mario {
+    background: linear-gradient(to left top, #ce0707, #0000be); /* Gradiente de fundo para o topo */
+}
+
 .body-mario {
     display: flex; /* Define o layout como flexbox */
     min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
@@ -145,12 +210,8 @@ h2 {
     align-items: center; /* Alinha os itens ao centro */
 }
 
-.topo-mario {
-    background: linear-gradient(to left top, #ce0707, #0000be); /* Gradiente de fundo para o topo */
-}
-
 .img-mario {
-    width: 250px; /* Define a largura da imagem */
+    width: 100px; /* Define a largura da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 10px; /* Arredonda os cantos da imagem */
 }
@@ -178,9 +239,6 @@ h2 {
     width: 250px; /* Largura da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 10px; /* Arredonda os cantos da imagem */
-}
-.img-mario{
-    width: 100px;
 }
 
 #gamemario img {

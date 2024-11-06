@@ -10,26 +10,88 @@
         <!-- fim fonte -->
         <link rel="stylesheet" href="css/estilo.css">
         <title>Cine MLP</title>
-       
+        
     </head>
     <body>
         <header class="topo-mlp">
-                <h1>CINEMA</h1>
-                <nav>
-                    <a href="index.html">VOLTAR</a>
-                    <a href="#filme">FILME</a>
-                    <a href="#contato">CONTATO</a> 
-                </nav>
+            <h1>CINEMA</h1>
+            <nav>
+                <a href="index.html">VOLTAR</a>
+                <a href="#filme">FILME</a>
+                <a href="#contato">CONTATO</a> 
+            </nav>
         </header>
-        <div id="#filme" class="body-mlp">
+        <div id="filme" class="body-mlp"> 
             <h2>My Little Pony: O Filme</h2>
-            <div class="img-mlp">
-                <a class="img" href="MLP.html"><img src="img/mlp.jpeg" alt="My Little Pony"></a>
-            </div>
-            <footer>
+            <script>
+                // Usando insertBefore: Inserindo o novo parágrafo abaixo do h2
+                const h2 = document.querySelector('h2'); // Seleciona o elemento <h2>
+                const subtexto = document.createElement('p'); // Cria um novo parágrafo
+                subtexto.textContent = 'Assista ao filme para ver mais aventura!'; // Define o texto do parágrafo
+                h2.parentNode.insertBefore(subtexto, h2.nextSibling); // Insere o parágrafo logo após o <h2>
+                subtexto.style.color = 'white'; // Define a cor do texto como branca
+            </script>
+            <div class="card-mlp">
+                <a class="img-postermlp" href="MLP.html"><img src="img/mlp.png" alt="My Little Pony"></a>
                 
-            </footer>
+                <p class="text-mlp">
+                    My Little Pony: O Filme - Friendship Comes in Many Colors" é um filme de animação lançado em 2023, que segue as aventuras das ponies de Equestria enquanto exploram novos territórios e enfrentam desafios para promover a amizade e a compreensão. O filme traz uma mensagem poderosa sobre a diversidade e o valor das diferenças, enfatizando que a amizade verdadeira pode surgir de diferentes formas, cores e culturas. A trama envolve as personagens principais em uma jornada para salvar seu mundo de uma ameaça, ao mesmo tempo em que reforçam os laços de amizade e a importância de aceitar e celebrar as individualidades. Com visuais vibrantes e uma trilha sonora envolvente, o filme é uma celebração da união, criatividade e da magia da amizade.
+                </p>
+            </div>
+            <br>
+            <div class="turma-mpl">
+                <img id="img-turma-mlp" class="img-turma-mlp" src="img/pony/turmamlp.png" alt="turma do mlp">
+            </div>
+            <br>
         </div>
+
+        <script>
+            // Selecionando o elemento da imagem
+            const imgTurmaMLP = document.getElementById('img-turma-mlp'); 
+
+            // Função para mostrar a palavra "Turma MLP" com uma div roxa ao redor
+            imgTurmaMLP.addEventListener('mouseover', function() {
+                // Cria a div que irá envolver a palavra
+                const divContainer = document.createElement('div');
+                divContainer.style.backgroundColor = 'purple'; // Define o fundo da div como roxo
+                divContainer.style.color = 'white'; // Define a cor do texto como branco
+                divContainer.style.padding = '5px 10px'; // Define o padding (espaçamento interno) da div
+                divContainer.style.borderRadius = '5px'; // Define bordas arredondadas para a div
+                divContainer.style.position = 'absolute'; // Define a posição da div como absoluta
+                divContainer.style.top = `${imgTurmaMLP.getBoundingClientRect().top + window.scrollY + 10}px`; // Posiciona 10px abaixo da imagem
+                divContainer.style.left = `${imgTurmaMLP.getBoundingClientRect().left + window.scrollX}px`; // Posiciona a div à esquerda da imagem
+                
+                // Cria o texto que será colocado dentro da div
+                const textNode = document.createTextNode('Turma MLP');
+                divContainer.appendChild(textNode); // Adiciona o texto à div
+                
+                // Adiciona a div à página
+                document.body.appendChild(divContainer);
+
+                // Armazena a referência à div para removê-la posteriormente
+                imgTurmaMLP._tooltipDiv = divContainer; 
+            });
+
+            // Função para remover a div quando o mouse sair da imagem
+            imgTurmaMLP.addEventListener('mouseout', function() {
+                if (imgTurmaMLP._tooltipDiv) {
+                    document.body.removeChild(imgTurmaMLP._tooltipDiv); // Remove a div criada
+                    delete imgTurmaMLP._tooltipDiv; // Limpa a referência à div
+                }
+            });
+
+            // Função para alternar a visibilidade da div ao clicar na imagem
+            imgTurmaMLP.addEventListener('click', function() {
+                // Verifica se a div já existe
+                if (imgTurmaMLP._tooltipDiv) {
+                    // Alterna a visibilidade da div
+                    if (imgTurmaMLP._tooltipDiv.style.display === 'none') {
+                        imgTurmaMLP._tooltipDiv.style.display = 'block'; // Exibe a div
+                    } else {
+                        imgTurmaMLP._tooltipDiv.style.display = 'none'; // Esconde a div
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
-
